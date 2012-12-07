@@ -15,6 +15,7 @@
 @end
 
 @implementation ControlsLayer
+@synthesize panelHeight;
 -(ControlsLayer *) init
 {
     if (self == [super init]) {
@@ -22,7 +23,7 @@
         panel.anchorPoint = CGPointZero;
         panel.position = CGPointZero;
         
-        _panelHeight = [NSNumber numberWithFloat:panel.contentSize.height];
+        panelHeight = [NSNumber numberWithFloat:panel.contentSize.height];
         [self addChild:panel z:0 tag:0];
         
         gunsFiring = NO;

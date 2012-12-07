@@ -11,6 +11,7 @@
 
 
 @implementation AssassinCar
+@synthesize velocity;
 -(AssassinCar *) init
 {
     if (self = [super init]) {
