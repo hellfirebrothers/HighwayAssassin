@@ -18,6 +18,12 @@
 		508E115E166DBABD00E37629 /* bullet-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E115D166DBABD00E37629 /* bullet-hd.png */; };
 		509C9C241672C05F007E6ABA /* game-art-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C221672C05E007E6ABA /* game-art-hd.pvr.ccz */; };
 		509C9C251672C05F007E6ABA /* game-art.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C231672C05E007E6ABA /* game-art.pvr.ccz */; };
+		509C9C2A1672C31B007E6ABA /* basic-tiles-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C261672C31B007E6ABA /* basic-tiles-hd.plist */; };
+		509C9C2B1672C31B007E6ABA /* basic-tiles-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C271672C31B007E6ABA /* basic-tiles-hd.png */; };
+		509C9C2C1672C31B007E6ABA /* basic-tiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C281672C31B007E6ABA /* basic-tiles.plist */; };
+		509C9C2D1672C31B007E6ABA /* basic-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C291672C31B007E6ABA /* basic-tiles.png */; };
+		509C9C301672C385007E6ABA /* tilemap-hd.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C2E1672C385007E6ABA /* tilemap-hd.tmx */; };
+		509C9C311672C385007E6ABA /* tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C2F1672C385007E6ABA /* tilemap.tmx */; };
 		DC272199160CA63900D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC272198160CA63900D88944 /* Default-568h@2x.png */; };
 		DC3C6FC614B8BF0700DAD281 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */; };
 		DC4B418D1438A33F0010650F /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B418B1438A33F0010650F /* MyView.m */; };
@@ -64,6 +70,12 @@
 		508E115D166DBABD00E37629 /* bullet-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullet-hd.png"; sourceTree = "<group>"; };
 		509C9C221672C05E007E6ABA /* game-art-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "game-art-hd.pvr.ccz"; sourceTree = "<group>"; };
 		509C9C231672C05E007E6ABA /* game-art.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "game-art.pvr.ccz"; sourceTree = "<group>"; };
+		509C9C261672C31B007E6ABA /* basic-tiles-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "basic-tiles-hd.plist"; sourceTree = "<group>"; };
+		509C9C271672C31B007E6ABA /* basic-tiles-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "basic-tiles-hd.png"; sourceTree = "<group>"; };
+		509C9C281672C31B007E6ABA /* basic-tiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "basic-tiles.plist"; sourceTree = "<group>"; };
+		509C9C291672C31B007E6ABA /* basic-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "basic-tiles.png"; sourceTree = "<group>"; };
+		509C9C2E1672C385007E6ABA /* tilemap-hd.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "tilemap-hd.tmx"; path = "../../../../WorkingArt/tilemap-hd.tmx"; sourceTree = "<group>"; };
+		509C9C2F1672C385007E6ABA /* tilemap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tilemap.tmx; path = ../../../../WorkingArt/tilemap.tmx; sourceTree = "<group>"; };
 		DC272198160CA63900D88944 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -203,6 +215,12 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				509C9C2E1672C385007E6ABA /* tilemap-hd.tmx */,
+				509C9C2F1672C385007E6ABA /* tilemap.tmx */,
+				509C9C261672C31B007E6ABA /* basic-tiles-hd.plist */,
+				509C9C271672C31B007E6ABA /* basic-tiles-hd.png */,
+				509C9C281672C31B007E6ABA /* basic-tiles.plist */,
+				509C9C291672C31B007E6ABA /* basic-tiles.png */,
 				509C9C221672C05E007E6ABA /* game-art-hd.pvr.ccz */,
 				509C9C231672C05E007E6ABA /* game-art.pvr.ccz */,
 				508E115D166DBABD00E37629 /* bullet-hd.png */,
@@ -304,6 +322,12 @@
 				508E115E166DBABD00E37629 /* bullet-hd.png in Resources */,
 				509C9C241672C05F007E6ABA /* game-art-hd.pvr.ccz in Resources */,
 				509C9C251672C05F007E6ABA /* game-art.pvr.ccz in Resources */,
+				509C9C2A1672C31B007E6ABA /* basic-tiles-hd.plist in Resources */,
+				509C9C2B1672C31B007E6ABA /* basic-tiles-hd.png in Resources */,
+				509C9C2C1672C31B007E6ABA /* basic-tiles.plist in Resources */,
+				509C9C2D1672C31B007E6ABA /* basic-tiles.png in Resources */,
+				509C9C301672C385007E6ABA /* tilemap-hd.tmx in Resources */,
+				509C9C311672C385007E6ABA /* tilemap.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
