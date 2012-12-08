@@ -88,13 +88,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>game-art.png</string>
+            <string>game-art.pvr.ccz</string>
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a21a560260719d9d3949ed8b49916b02$</string>
+            <string>$TexturePacker:SmartUpdate:a3832831030bd2c9bea61c07de1c1312$</string>
             <key>textureFileName</key>
-            <string>game-art.png</string>
+            <string>game-art.pvr.ccz</string>
         </dict>
     </dict>
 </plist>

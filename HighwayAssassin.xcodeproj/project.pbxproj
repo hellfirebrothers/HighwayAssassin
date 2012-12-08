@@ -14,10 +14,10 @@
 		50328383166D680300714E52 /* ControlsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50328382166D680300714E52 /* ControlsLayer.m */; };
 		50328386166D80D200714E52 /* MuzzleFlashEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 50328385166D80D200714E52 /* MuzzleFlashEffect.m */; };
 		5088A46D166E7945002E602F /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088A46C166E78FD002E602F /* GameLayer.m */; };
-		508E115A166DA41C00E37629 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E1159166DA41C00E37629 /* fire.png */; };
 		508E115C166DBAB300E37629 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E115B166DBAB300E37629 /* bullet.png */; };
 		508E115E166DBABD00E37629 /* bullet-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E115D166DBABD00E37629 /* bullet-hd.png */; };
-		508E118E166DCC1A00E37629 /* game-art.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E118D166DCC1A00E37629 /* game-art.png */; };
+		509C9C241672C05F007E6ABA /* game-art-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C221672C05E007E6ABA /* game-art-hd.pvr.ccz */; };
+		509C9C251672C05F007E6ABA /* game-art.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C231672C05E007E6ABA /* game-art.pvr.ccz */; };
 		DC272199160CA63900D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC272198160CA63900D88944 /* Default-568h@2x.png */; };
 		DC3C6FC614B8BF0700DAD281 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */; };
 		DC4B418D1438A33F0010650F /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B418B1438A33F0010650F /* MyView.m */; };
@@ -60,11 +60,10 @@
 		50328385166D80D200714E52 /* MuzzleFlashEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuzzleFlashEffect.m; sourceTree = "<group>"; };
 		5088A46B166E78FD002E602F /* GameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		5088A46C166E78FD002E602F /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
-		508E1159166DA41C00E37629 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		508E115B166DBAB300E37629 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		508E115D166DBABD00E37629 /* bullet-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullet-hd.png"; sourceTree = "<group>"; };
-		508E118D166DCC1A00E37629 /* game-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-art.png"; sourceTree = "<group>"; };
-		508E118F166DCC2B00E37629 /* game-art-hd.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "game-art-hd.pvr"; sourceTree = "<group>"; };
+		509C9C221672C05E007E6ABA /* game-art-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "game-art-hd.pvr.ccz"; sourceTree = "<group>"; };
+		509C9C231672C05E007E6ABA /* game-art.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "game-art.pvr.ccz"; sourceTree = "<group>"; };
 		DC272198160CA63900D88944 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -204,11 +203,10 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				508E118F166DCC2B00E37629 /* game-art-hd.pvr */,
-				508E118D166DCC1A00E37629 /* game-art.png */,
+				509C9C221672C05E007E6ABA /* game-art-hd.pvr.ccz */,
+				509C9C231672C05E007E6ABA /* game-art.pvr.ccz */,
 				508E115D166DBABD00E37629 /* bullet-hd.png */,
 				508E115B166DBAB300E37629 /* bullet.png */,
-				508E1159166DA41C00E37629 /* fire.png */,
 				5011A0B9166C1CA100FABC7F /* game-art-hd.plist */,
 				5011A0BB166C1CA100FABC7F /* game-art.plist */,
 				DCC1A39513A94F1A005BD75D /* config.lua */,
@@ -302,10 +300,10 @@
 				DC272199160CA63900D88944 /* Default-568h@2x.png in Resources */,
 				5011A0BD166C1CA100FABC7F /* game-art-hd.plist in Resources */,
 				5011A0BF166C1CA100FABC7F /* game-art.plist in Resources */,
-				508E115A166DA41C00E37629 /* fire.png in Resources */,
 				508E115C166DBAB300E37629 /* bullet.png in Resources */,
 				508E115E166DBABD00E37629 /* bullet-hd.png in Resources */,
-				508E118E166DCC1A00E37629 /* game-art.png in Resources */,
+				509C9C241672C05F007E6ABA /* game-art-hd.pvr.ccz in Resources */,
+				509C9C251672C05F007E6ABA /* game-art.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,10 +344,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA90EF13B4F6F7009DD35A /* BuildSettings-Debug-iOS.xcconfig */;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../__Kobold2D__/libs/GoogleAdMobAdsSDK\"",
 				);
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -357,10 +357,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA90F013B4F811009DD35A /* BuildSettings-Release-iOS.xcconfig */;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../__Kobold2D__/libs/GoogleAdMobAdsSDK\"",
 				);
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
