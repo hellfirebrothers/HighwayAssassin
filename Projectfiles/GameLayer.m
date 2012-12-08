@@ -7,7 +7,7 @@
 //
 
 #import "GameLayer.h"
-#import "ScrollingBackground.h"
+#import "TileMapBackground.h"
 #import "AssassinCar.h"
 #import "ControlsLayer.h"
 #import "MuzzleFlashEffect.h"
@@ -44,8 +44,8 @@ static GameLayer* sharedGameLayer;
         [frameCache addSpriteFramesWithFile:@"game-art.plist"];
         
         // Add the background
-        background = [ScrollingBackground node];
-        [self addChild:background z:0 tag:GameSceneNodeScrollingBackground];
+        background = [TileMapBackground node];
+        [self addChild:background z:0 tag:GameSceneNodeTileMapBackground];
         
         // Add the Controls Layer
         ControlsLayer *controlsLayer = [ControlsLayer node];

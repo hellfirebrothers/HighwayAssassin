@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-@class ScrollingBackground;
+@class TileMapBackground;
 
 typedef enum
 {
-	GameSceneNodeScrollingBackground,
+	GameSceneNodeTileMapBackground,
     GameSceneNodeControlsLayer,
     GameSceneNodeAssassinCar,
     GameSceneNodeMax
@@ -21,7 +21,7 @@ typedef enum
 @interface GameLayer : CCLayer 
 {
     CGPoint lastTouchLocation;
-    ScrollingBackground *background;
+    TileMapBackground *background;
     bool readyForTouch;
     
 }

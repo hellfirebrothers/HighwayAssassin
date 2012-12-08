@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5011A0BD166C1CA100FABC7F /* game-art-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5011A0B9166C1CA100FABC7F /* game-art-hd.plist */; };
 		5011A0BF166C1CA100FABC7F /* game-art.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5011A0BB166C1CA100FABC7F /* game-art.plist */; };
-		5011A0C6166C214200FABC7F /* ScrollingBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 5011A0C5166C214200FABC7F /* ScrollingBackground.m */; };
 		5011A0CC166C27E200FABC7F /* AssassinCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5011A0CB166C27E200FABC7F /* AssassinCar.m */; };
 		50328383166D680300714E52 /* ControlsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50328382166D680300714E52 /* ControlsLayer.m */; };
 		50328386166D80D200714E52 /* MuzzleFlashEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 50328385166D80D200714E52 /* MuzzleFlashEffect.m */; };
@@ -22,8 +21,10 @@
 		509C9C2B1672C31B007E6ABA /* basic-tiles-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C271672C31B007E6ABA /* basic-tiles-hd.png */; };
 		509C9C2C1672C31B007E6ABA /* basic-tiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C281672C31B007E6ABA /* basic-tiles.plist */; };
 		509C9C2D1672C31B007E6ABA /* basic-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C291672C31B007E6ABA /* basic-tiles.png */; };
-		509C9C301672C385007E6ABA /* tilemap-hd.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C2E1672C385007E6ABA /* tilemap-hd.tmx */; };
-		509C9C311672C385007E6ABA /* tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C2F1672C385007E6ABA /* tilemap.tmx */; };
+		509C9C4B1672C62C007E6ABA /* TileMapBackground.h in Sources */ = {isa = PBXBuildFile; fileRef = 509C9C491672C4BE007E6ABA /* TileMapBackground.h */; };
+		509C9C4C1672C62C007E6ABA /* TileMapBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C9C4A1672C4BE007E6ABA /* TileMapBackground.m */; };
+		509C9C561672D0C3007E6ABA /* tilemap-hd.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C551672D0C3007E6ABA /* tilemap-hd.tmx */; };
+		509C9C581672D0CA007E6ABA /* tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C571672D0CA007E6ABA /* tilemap.tmx */; };
 		DC272199160CA63900D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC272198160CA63900D88944 /* Default-568h@2x.png */; };
 		DC3C6FC614B8BF0700DAD281 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */; };
 		DC4B418D1438A33F0010650F /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B418B1438A33F0010650F /* MyView.m */; };
@@ -56,8 +57,6 @@
 /* Begin PBXFileReference section */
 		5011A0B9166C1CA100FABC7F /* game-art-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "game-art-hd.plist"; sourceTree = "<group>"; };
 		5011A0BB166C1CA100FABC7F /* game-art.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "game-art.plist"; sourceTree = "<group>"; };
-		5011A0C4166C214200FABC7F /* ScrollingBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingBackground.h; sourceTree = "<group>"; };
-		5011A0C5166C214200FABC7F /* ScrollingBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingBackground.m; sourceTree = "<group>"; };
 		5011A0CA166C27E200FABC7F /* AssassinCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssassinCar.h; sourceTree = "<group>"; };
 		5011A0CB166C27E200FABC7F /* AssassinCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssassinCar.m; sourceTree = "<group>"; };
 		50328381166D680300714E52 /* ControlsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsLayer.h; sourceTree = "<group>"; };
@@ -74,8 +73,10 @@
 		509C9C271672C31B007E6ABA /* basic-tiles-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "basic-tiles-hd.png"; sourceTree = "<group>"; };
 		509C9C281672C31B007E6ABA /* basic-tiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "basic-tiles.plist"; sourceTree = "<group>"; };
 		509C9C291672C31B007E6ABA /* basic-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "basic-tiles.png"; sourceTree = "<group>"; };
-		509C9C2E1672C385007E6ABA /* tilemap-hd.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "tilemap-hd.tmx"; path = "../../../../WorkingArt/tilemap-hd.tmx"; sourceTree = "<group>"; };
-		509C9C2F1672C385007E6ABA /* tilemap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tilemap.tmx; path = ../../../../WorkingArt/tilemap.tmx; sourceTree = "<group>"; };
+		509C9C491672C4BE007E6ABA /* TileMapBackground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileMapBackground.h; sourceTree = "<group>"; };
+		509C9C4A1672C4BE007E6ABA /* TileMapBackground.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TileMapBackground.m; sourceTree = "<group>"; };
+		509C9C551672D0C3007E6ABA /* tilemap-hd.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "tilemap-hd.tmx"; sourceTree = "<group>"; };
+		509C9C571672D0CA007E6ABA /* tilemap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tilemap.tmx; sourceTree = "<group>"; };
 		DC272198160CA63900D88944 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -196,8 +197,8 @@
 			children = (
 				5088A46B166E78FD002E602F /* GameLayer.h */,
 				5088A46C166E78FD002E602F /* GameLayer.m */,
-				5011A0C4166C214200FABC7F /* ScrollingBackground.h */,
-				5011A0C5166C214200FABC7F /* ScrollingBackground.m */,
+				509C9C491672C4BE007E6ABA /* TileMapBackground.h */,
+				509C9C4A1672C4BE007E6ABA /* TileMapBackground.m */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,
 				DCC1A38E13A94F1A005BD75D /* AppDelegate.m */,
 				5011A0CA166C27E200FABC7F /* AssassinCar.h */,
@@ -215,8 +216,8 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				509C9C2E1672C385007E6ABA /* tilemap-hd.tmx */,
-				509C9C2F1672C385007E6ABA /* tilemap.tmx */,
+				509C9C571672D0CA007E6ABA /* tilemap.tmx */,
+				509C9C551672D0C3007E6ABA /* tilemap-hd.tmx */,
 				509C9C261672C31B007E6ABA /* basic-tiles-hd.plist */,
 				509C9C271672C31B007E6ABA /* basic-tiles-hd.png */,
 				509C9C281672C31B007E6ABA /* basic-tiles.plist */,
@@ -326,8 +327,8 @@
 				509C9C2B1672C31B007E6ABA /* basic-tiles-hd.png in Resources */,
 				509C9C2C1672C31B007E6ABA /* basic-tiles.plist in Resources */,
 				509C9C2D1672C31B007E6ABA /* basic-tiles.png in Resources */,
-				509C9C301672C385007E6ABA /* tilemap-hd.tmx in Resources */,
-				509C9C311672C385007E6ABA /* tilemap.tmx in Resources */,
+				509C9C561672D0C3007E6ABA /* tilemap-hd.tmx in Resources */,
+				509C9C581672D0CA007E6ABA /* tilemap.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,11 +339,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509C9C4B1672C62C007E6ABA /* TileMapBackground.h in Sources */,
+				509C9C4C1672C62C007E6ABA /* TileMapBackground.m in Sources */,
 				5088A46D166E7945002E602F /* GameLayer.m in Sources */,
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
 				DCC1A3AD13A94F1A005BD75D /* main.m in Sources */,
 				DC4B418D1438A33F0010650F /* MyView.m in Sources */,
-				5011A0C6166C214200FABC7F /* ScrollingBackground.m in Sources */,
 				5011A0CC166C27E200FABC7F /* AssassinCar.m in Sources */,
 				50328383166D680300714E52 /* ControlsLayer.m in Sources */,
 				50328386166D80D200714E52 /* MuzzleFlashEffect.m in Sources */,
