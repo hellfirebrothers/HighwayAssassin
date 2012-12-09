@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="30" height="8" tilewidth="64" tileheight="64">
+<map version="1.0" orientation="orthogonal" width="1000" height="8" tilewidth="64" tileheight="64">
  <tileset firstgid="1" name="basic-tiles" tilewidth="64" tileheight="64">
   <image source="basic-tiles-hd.png" width="256" height="512"/>
  </tileset>
- <layer name="TileLayer" width="30" height="8">
+ <tileset firstgid="33" name="event-tiles" tilewidth="64" tileheight="64">
+  <image source="event-tiles-hd.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="policeSpawn" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="GameEvents" width="1000" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYBwAzDJAmGmAMPMA4VH/0gezDRAGAFlIArM=
+   eJztzjEBAAAIA6BVsX9JG+zUBxKQAAAAAAAAAAAAAAAAAAAAQDffAQAAAAAAAAAAAAAAAAAAAM4siFwAIg==
+  </data>
+ </layer>
+ <layer name="TileLayer" width="1000" height="8">
+  <data encoding="base64" compression="zlib">
+   eJzt3LENgFAMQ8F8QCwAYv9RoWYBR8oVN4G7V3hV1QIAAACiDgAAACBuAwAAAOJ2AAAAIC7dBwAAAIB8H5jm+ZwAAADwk+4Dk9yV/wMEAACgp3QfmOJqsDUAAAB9vYK8T18=
   </data>
  </layer>
 </map>

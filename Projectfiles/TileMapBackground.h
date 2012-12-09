@@ -15,7 +15,13 @@ enum
 };
 
 @interface TileMapBackground : CCNode {
-    
+    CCTMXTiledMap *tileMap;
+    CCTMXLayer *eventLayer;
+    int currentTileColumn;
 }
+
+-(void) scrollBackground;
+-(void) checkTile;
+-(void) handleEventTile:(int)GID;
 
 @end

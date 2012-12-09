@@ -4,23 +4,10 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>bullet.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{966,2},{27,27}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{27,27}}</string>
-                <key>sourceSize</key>
-                <string>{27,27}</string>
-            </dict>
             <key>button-active.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{212,780},{128,128}}</string>
+                <string>{{136,80},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +20,7 @@
             <key>button.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,780},{128,128}}</string>
+                <string>{{290,67},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,11 +33,11 @@
             <key>car.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,780},{150,74}}</string>
+                <string>{{136,2},{150,74}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{150,74}}</string>
                 <key>sourceSize</key>
@@ -59,28 +46,28 @@
             <key>panel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,646},{960,130}}</string>
+                <string>{{2,2},{960,130}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{960,130}}</string>
                 <key>sourceSize</key>
                 <string>{960,130}</string>
             </dict>
-            <key>street.png</key>
+            <key>police.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{960,640}}</string>
+                <string>{{290,2},{147,61}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{960,640}}</string>
+                <string>{{0,0},{147,61}}</string>
                 <key>sourceSize</key>
-                <string>{960,640}</string>
+                <string>{147,61}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -90,9 +77,9 @@
             <key>realTextureFileName</key>
             <string>game-art-hd.pvr.ccz</string>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:8dd40e7a384b3f0b01bab2889b0329a9$</string>
+            <string>$TexturePacker:SmartUpdate:976f7fabfa6725be9ea1edba8acb66d4$</string>
             <key>textureFileName</key>
             <string>game-art-hd.pvr.ccz</string>
         </dict>

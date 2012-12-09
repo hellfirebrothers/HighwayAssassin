@@ -21,10 +21,14 @@
 		509C9C2B1672C31B007E6ABA /* basic-tiles-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C271672C31B007E6ABA /* basic-tiles-hd.png */; };
 		509C9C2C1672C31B007E6ABA /* basic-tiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C281672C31B007E6ABA /* basic-tiles.plist */; };
 		509C9C2D1672C31B007E6ABA /* basic-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C291672C31B007E6ABA /* basic-tiles.png */; };
-		509C9C4B1672C62C007E6ABA /* TileMapBackground.h in Sources */ = {isa = PBXBuildFile; fileRef = 509C9C491672C4BE007E6ABA /* TileMapBackground.h */; };
 		509C9C4C1672C62C007E6ABA /* TileMapBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C9C4A1672C4BE007E6ABA /* TileMapBackground.m */; };
-		509C9C561672D0C3007E6ABA /* tilemap-hd.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C551672D0C3007E6ABA /* tilemap-hd.tmx */; };
-		509C9C581672D0CA007E6ABA /* tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C571672D0CA007E6ABA /* tilemap.tmx */; };
+		509C9C631672DA4B007E6ABA /* tilemap-hd.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C611672DA4B007E6ABA /* tilemap-hd.tmx */; };
+		509C9C641672DA4B007E6ABA /* tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 509C9C621672DA4B007E6ABA /* tilemap.tmx */; };
+		50A04DBA1673E98400CB4EF1 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A04DB91673E98400CB4EF1 /* Enemy.m */; };
+		50A04DBC1673EFD900CB4EF1 /* event-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A04DBB1673EFD900CB4EF1 /* event-tiles.png */; };
+		50A04DBE1673EFE500CB4EF1 /* event-tiles-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A04DBD1673EFE500CB4EF1 /* event-tiles-hd.png */; };
+		50A04DC11673F06D00CB4EF1 /* event-tiles-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50A04DBF1673F06D00CB4EF1 /* event-tiles-hd.plist */; };
+		50A04DC21673F06D00CB4EF1 /* event-tiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50A04DC01673F06D00CB4EF1 /* event-tiles.plist */; };
 		DC272199160CA63900D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC272198160CA63900D88944 /* Default-568h@2x.png */; };
 		DC3C6FC614B8BF0700DAD281 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */; };
 		DC4B418D1438A33F0010650F /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B418B1438A33F0010650F /* MyView.m */; };
@@ -75,8 +79,14 @@
 		509C9C291672C31B007E6ABA /* basic-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "basic-tiles.png"; sourceTree = "<group>"; };
 		509C9C491672C4BE007E6ABA /* TileMapBackground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileMapBackground.h; sourceTree = "<group>"; };
 		509C9C4A1672C4BE007E6ABA /* TileMapBackground.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TileMapBackground.m; sourceTree = "<group>"; };
-		509C9C551672D0C3007E6ABA /* tilemap-hd.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "tilemap-hd.tmx"; sourceTree = "<group>"; };
-		509C9C571672D0CA007E6ABA /* tilemap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tilemap.tmx; sourceTree = "<group>"; };
+		509C9C611672DA4B007E6ABA /* tilemap-hd.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "tilemap-hd.tmx"; sourceTree = "<group>"; };
+		509C9C621672DA4B007E6ABA /* tilemap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tilemap.tmx; sourceTree = "<group>"; };
+		50A04DB81673E98400CB4EF1 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		50A04DB91673E98400CB4EF1 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		50A04DBB1673EFD900CB4EF1 /* event-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "event-tiles.png"; sourceTree = "<group>"; };
+		50A04DBD1673EFE500CB4EF1 /* event-tiles-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "event-tiles-hd.png"; sourceTree = "<group>"; };
+		50A04DBF1673F06D00CB4EF1 /* event-tiles-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "event-tiles-hd.plist"; sourceTree = "<group>"; };
+		50A04DC01673F06D00CB4EF1 /* event-tiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "event-tiles.plist"; sourceTree = "<group>"; };
 		DC272198160CA63900D88944 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -207,6 +217,8 @@
 				50328382166D680300714E52 /* ControlsLayer.m */,
 				50328384166D80D200714E52 /* MuzzleFlashEffect.h */,
 				50328385166D80D200714E52 /* MuzzleFlashEffect.m */,
+				50A04DB81673E98400CB4EF1 /* Enemy.h */,
+				50A04DB91673E98400CB4EF1 /* Enemy.m */,
 				DCC1A39413A94F1A005BD75D /* Resources */,
 				DCC1A3CF13A94F2C005BD75D /* Supporting Files */,
 			);
@@ -216,9 +228,13 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				509C9C571672D0CA007E6ABA /* tilemap.tmx */,
-				509C9C551672D0C3007E6ABA /* tilemap-hd.tmx */,
+				50A04DBF1673F06D00CB4EF1 /* event-tiles-hd.plist */,
+				50A04DC01673F06D00CB4EF1 /* event-tiles.plist */,
+				50A04DBD1673EFE500CB4EF1 /* event-tiles-hd.png */,
+				50A04DBB1673EFD900CB4EF1 /* event-tiles.png */,
+				509C9C611672DA4B007E6ABA /* tilemap-hd.tmx */,
 				509C9C261672C31B007E6ABA /* basic-tiles-hd.plist */,
+				509C9C621672DA4B007E6ABA /* tilemap.tmx */,
 				509C9C271672C31B007E6ABA /* basic-tiles-hd.png */,
 				509C9C281672C31B007E6ABA /* basic-tiles.plist */,
 				509C9C291672C31B007E6ABA /* basic-tiles.png */,
@@ -327,8 +343,12 @@
 				509C9C2B1672C31B007E6ABA /* basic-tiles-hd.png in Resources */,
 				509C9C2C1672C31B007E6ABA /* basic-tiles.plist in Resources */,
 				509C9C2D1672C31B007E6ABA /* basic-tiles.png in Resources */,
-				509C9C561672D0C3007E6ABA /* tilemap-hd.tmx in Resources */,
-				509C9C581672D0CA007E6ABA /* tilemap.tmx in Resources */,
+				509C9C631672DA4B007E6ABA /* tilemap-hd.tmx in Resources */,
+				509C9C641672DA4B007E6ABA /* tilemap.tmx in Resources */,
+				50A04DBC1673EFD900CB4EF1 /* event-tiles.png in Resources */,
+				50A04DBE1673EFE500CB4EF1 /* event-tiles-hd.png in Resources */,
+				50A04DC11673F06D00CB4EF1 /* event-tiles-hd.plist in Resources */,
+				50A04DC21673F06D00CB4EF1 /* event-tiles.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +359,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509C9C4B1672C62C007E6ABA /* TileMapBackground.h in Sources */,
 				509C9C4C1672C62C007E6ABA /* TileMapBackground.m in Sources */,
 				5088A46D166E7945002E602F /* GameLayer.m in Sources */,
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
@@ -348,6 +367,7 @@
 				5011A0CC166C27E200FABC7F /* AssassinCar.m in Sources */,
 				50328383166D680300714E52 /* ControlsLayer.m in Sources */,
 				50328386166D80D200714E52 /* MuzzleFlashEffect.m in Sources */,
+				50A04DBA1673E98400CB4EF1 /* Enemy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
