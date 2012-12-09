@@ -43,7 +43,7 @@
             ccp(halfSpriteWidth, -halfSpriteHeight),
         };
         
-        float mass = 1.0f;
+        float mass = 5.0f;
         
         body = cpBodyNew(mass,
                          cpMomentForPoly(mass, numVertices, verts, CGPointZero));
@@ -53,11 +53,13 @@
         
         cpSpaceAddBody(space, body);
      
+        // TODO: maybe add more shapes to increase collision precision
         cpShape *shape = cpPolyShapeNew(body, numVertices, verts, CGPointZero);
         shape->e = 0.4f;
         shape->u = 0.4f;
         cpSpaceAddShape(space, shape);
         
+        // Store a reference to this node for use in callback functions
         body->data = (__bridge void*)self;
     }
     return self;
@@ -65,25 +67,26 @@
 
 -(void) addToLocation:(CGPoint)difference
 {
-    CGPoint impulseVect = ccpMult(difference, 1);
-    cpBodyApplyImpulse(body, impulseVect		, CGPointZero);
+    // Change this to make the "push/pull" more or less effective
+    int impulseMultiplier = 5;
+    
+    CGPoint impulseVect = ccpMult(difference, impulseMultiplier);
+    cpBodyApplyImpulse(body, impulseVect, CGPointZero);
 }
 
 -(void) fireMachineGun {
     
     // Add a flash effect on each side of the front of the car to simulate
     // machine gun fire
-    
     leftFlashEffect = [MuzzleFlashEffect node];
     leftFlashEffect.position = CGPointMake(sprite.position.x + sprite.contentSize.width * .5f,
                                        sprite.position.y + sprite.contentSize.height / 4);
-    [self addChild:leftFlashEffect z:1 tag:AssassinCarNodeLeftFlashEffect];
- 
+    [sprite addChild:leftFlashEffect];
     rightFlashEffect = [MuzzleFlashEffect node];
     rightFlashEffect.position = CGPointMake(sprite.position.x + sprite.contentSize.width * .5f,
                                             sprite.position.y - sprite.contentSize.height / 4);
     
-    [self addChild:rightFlashEffect z:1 tag:AssassinCarNodeRightFlashEffect];
+    [sprite addChild:rightFlashEffect];
 }
 
 -(void) stopMachineGun {
@@ -98,11 +101,13 @@
 -(void) syncSpriteWithBody
 {
     sprite.position = body->p;
+    // Must invert the degree measure to match the body's angle
     sprite.rotation = -CC_RADIANS_TO_DEGREES(cpBodyGetAngle(body));
-    leftFlashEffect.position = CGPointMake(sprite.position.x + sprite.contentSize.width * .5f,
-                                           sprite.position.y + sprite.contentSize.height / 4);
-    rightFlashEffect.position = CGPointMake(sprite.position.x + sprite.contentSize.width * .5f,
-                                            sprite.position.y - sprite.contentSize.height / 4);
+    // TODO: make this less verbose/more efficient
+    leftFlashEffect.position = CGPointMake(sprite.contentSize.width,
+                                           sprite.contentSize.height * .25f);
+    rightFlashEffect.position = CGPointMake(sprite.contentSize.width,
+                                            sprite.contentSize.height * .75f);
 }
 
 @end

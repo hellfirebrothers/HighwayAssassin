@@ -20,6 +20,18 @@ typedef enum
     GameSceneNodeMax
 } GameSceneNodeTags;
 
+typedef enum
+{
+    CP_LAYER_1 = 0xf0000000,
+    CP_LAYER_2 = 0x0f000000,
+    CP_LAYER_3 = 0x00f00000,
+    CP_LAYER_4 = 0x000f0000,
+    CP_LAYER_5 = 0x0000f000,
+    CP_LAYER_6 = 0x00000f00,
+    CP_LAYER_7 = 0x000000f0,
+    CP_LAYER_8 = 0x0000000f,
+} PhysicsLayers;
+
 @interface GameLayer : CCLayer 
 {
     CGPoint lastTouchLocation;

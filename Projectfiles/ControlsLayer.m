@@ -35,6 +35,7 @@
 
 -(void) addFireButton
 {
+    // Big red fire button
     float buttonRadius = 32;
     CGSize screenSize = [CCDirector sharedDirector].winSize;
     
@@ -51,6 +52,7 @@
         skinFireButton.button = fireButton;
         skinFireButton.defaultSprite = idle;
         skinFireButton.pressSprite = press;
+        // Position this at the bottom-right of the screen
         skinFireButton.position = CGPointMake(screenSize.width - buttonRadius, buttonRadius);
         [self addChild:skinFireButton];
     } else {

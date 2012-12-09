@@ -89,10 +89,14 @@ static GameLayer* sharedGameLayer;
     // left
     walls[2] = cpSegmentShapeNew(_space->staticBody, ccp(0, panelHeight),
                                  ccp(0, boxHeight), 0.0f);
+    cpShapeSetLayers(walls[2], CP_LAYER_1);
     
     // right
     walls[3] = cpSegmentShapeNew(_space->staticBody, ccp(boxWidth, panelHeight),
                                  ccp(boxWidth, boxHeight), 0.0f);
+    cpShapeSetLayers(walls[3], CP_LAYER_1);
+    
+    CCLOG(@"CP_ALL_LAYERS is %d", CP_ALL_LAYERS);
     
     for (int i = 0; i < 4; i++) {
         walls[i]->e = 0.0f;

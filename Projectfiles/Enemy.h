@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "chipmunk.h"
 
 @interface Enemy : CCNode {
     CCSprite *sprite;
+    cpBody *body;
 }
 
 +(void) spawnEnemy;
