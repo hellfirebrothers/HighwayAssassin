@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "chipmunk.h"
+
 @class MuzzleFlashEffect;
 
 typedef enum {
@@ -21,10 +23,12 @@ typedef enum {
     bool gunsFiring;
     MuzzleFlashEffect *leftFlashEffect;
     MuzzleFlashEffect *rightFlashEffect;
+    cpBody *body;
 }
 
 @property CGPoint velocity;
 -(void) addToLocation:(CGPoint)difference;
 -(void) fireMachineGun;
 -(void) stopMachineGun;
+-(void) syncSpriteWithBody;
 @end

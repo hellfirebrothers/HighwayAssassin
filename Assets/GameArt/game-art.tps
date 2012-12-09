@@ -30,7 +30,7 @@
         <key>quiet</key>
         <false/>
         <key>premultiplyAlpha</key>
-        <false/>
+        <true/>
         <key>shapeDebug</key>
         <false/>
         <key>dpi</key>
@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>../../Projectfiles/Resources/game-art-hd.png</filename>
+        <filename>../../Projectfiles/Resources/game-art-hd.pvr.ccz</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -64,7 +64,7 @@
         <key>textureSubPath</key>
         <string></string>
         <key>textureFormat</key>
-        <enum type="SettingsBase::TextureFormat">png</enum>
+        <enum type="SettingsBase::TextureFormat">pvr2ccz</enum>
         <key>borderPadding</key>
         <uint>2</uint>
         <key>maxTextureSize</key>

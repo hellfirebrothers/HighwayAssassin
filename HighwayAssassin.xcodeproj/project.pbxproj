@@ -12,6 +12,7 @@
 		5011A0CC166C27E200FABC7F /* AssassinCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5011A0CB166C27E200FABC7F /* AssassinCar.m */; };
 		50328383166D680300714E52 /* ControlsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50328382166D680300714E52 /* ControlsLayer.m */; };
 		50328386166D80D200714E52 /* MuzzleFlashEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 50328385166D80D200714E52 /* MuzzleFlashEffect.m */; };
+		508064D91674A4350039F7C3 /* CPDebugLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 508064D81674A4350039F7C3 /* CPDebugLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5088A46D166E7945002E602F /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088A46C166E78FD002E602F /* GameLayer.m */; };
 		508E115C166DBAB300E37629 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E115B166DBAB300E37629 /* bullet.png */; };
 		508E115E166DBABD00E37629 /* bullet-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E115D166DBABD00E37629 /* bullet-hd.png */; };
@@ -67,6 +68,8 @@
 		50328382166D680300714E52 /* ControlsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsLayer.m; sourceTree = "<group>"; };
 		50328384166D80D200714E52 /* MuzzleFlashEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuzzleFlashEffect.h; sourceTree = "<group>"; };
 		50328385166D80D200714E52 /* MuzzleFlashEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuzzleFlashEffect.m; sourceTree = "<group>"; };
+		508064D71674A4350039F7C3 /* CPDebugLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPDebugLayer.h; path = "../../../../../Downloads/CPDebugLayer-master/CPDebugLayer.h"; sourceTree = "<group>"; };
+		508064D81674A4350039F7C3 /* CPDebugLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPDebugLayer.m; path = "../../../../../Downloads/CPDebugLayer-master/CPDebugLayer.m"; sourceTree = "<group>"; };
 		5088A46B166E78FD002E602F /* GameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		5088A46C166E78FD002E602F /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		508E115B166DBAB300E37629 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
+				508064D71674A4350039F7C3 /* CPDebugLayer.h */,
+				508064D81674A4350039F7C3 /* CPDebugLayer.m */,
 				5088A46B166E78FD002E602F /* GameLayer.h */,
 				5088A46C166E78FD002E602F /* GameLayer.m */,
 				509C9C491672C4BE007E6ABA /* TileMapBackground.h */,
@@ -368,6 +373,7 @@
 				50328383166D680300714E52 /* ControlsLayer.m in Sources */,
 				50328386166D80D200714E52 /* MuzzleFlashEffect.m in Sources */,
 				50A04DBA1673E98400CB4EF1 /* Enemy.m in Sources */,
+				508064D91674A4350039F7C3 /* CPDebugLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA90EF13B4F6F7009DD35A /* BuildSettings-Debug-iOS.xcconfig */;
 			buildSettings = {
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA90F013B4F811009DD35A /* BuildSettings-Release-iOS.xcconfig */;
 			buildSettings = {
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
