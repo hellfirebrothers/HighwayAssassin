@@ -24,11 +24,13 @@ typedef enum {
     MuzzleFlashEffect *leftFlashEffect;
     MuzzleFlashEffect *rightFlashEffect;
     cpBody *body;
+    bool swerving;
 }
 
 @property CGPoint velocity;
 -(void) addToLocation:(CGPoint)difference;
 -(void) fireMachineGun;
 -(void) stopMachineGun;
+-(void) steerCorrectively;
 -(void) syncSpriteWithBody;
 @end

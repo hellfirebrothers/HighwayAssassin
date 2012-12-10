@@ -30,6 +30,7 @@
 		50A04DBE1673EFE500CB4EF1 /* event-tiles-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A04DBD1673EFE500CB4EF1 /* event-tiles-hd.png */; };
 		50A04DC11673F06D00CB4EF1 /* event-tiles-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50A04DBF1673F06D00CB4EF1 /* event-tiles-hd.plist */; };
 		50A04DC21673F06D00CB4EF1 /* event-tiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50A04DC01673F06D00CB4EF1 /* event-tiles.plist */; };
+		50A9D9FE16756FD800D7F754 /* CCAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9D9FD16756FD800D7F754 /* CCAnimationHelper.m */; };
 		DC272199160CA63900D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC272198160CA63900D88944 /* Default-568h@2x.png */; };
 		DC3C6FC614B8BF0700DAD281 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */; };
 		DC4B418D1438A33F0010650F /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4B418B1438A33F0010650F /* MyView.m */; };
@@ -90,6 +91,8 @@
 		50A04DBD1673EFE500CB4EF1 /* event-tiles-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "event-tiles-hd.png"; sourceTree = "<group>"; };
 		50A04DBF1673F06D00CB4EF1 /* event-tiles-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "event-tiles-hd.plist"; sourceTree = "<group>"; };
 		50A04DC01673F06D00CB4EF1 /* event-tiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "event-tiles.plist"; sourceTree = "<group>"; };
+		50A9D9FC16756FD800D7F754 /* CCAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCAnimationHelper.h; path = "../../../Useful Snippets/CCAnimationHelper.h"; sourceTree = "<group>"; };
+		50A9D9FD16756FD800D7F754 /* CCAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAnimationHelper.m; path = "../../../Useful Snippets/CCAnimationHelper.m"; sourceTree = "<group>"; };
 		DC272198160CA63900D88944 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC3C6FC514B8BF0700DAD281 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
+				50A9D9FC16756FD800D7F754 /* CCAnimationHelper.h */,
+				50A9D9FD16756FD800D7F754 /* CCAnimationHelper.m */,
 				508064D71674A4350039F7C3 /* CPDebugLayer.h */,
 				508064D81674A4350039F7C3 /* CPDebugLayer.m */,
 				5088A46B166E78FD002E602F /* GameLayer.h */,
@@ -374,6 +379,7 @@
 				50328386166D80D200714E52 /* MuzzleFlashEffect.m in Sources */,
 				50A04DBA1673E98400CB4EF1 /* Enemy.m in Sources */,
 				508064D91674A4350039F7C3 /* CPDebugLayer.m in Sources */,
+				50A9D9FE16756FD800D7F754 /* CCAnimationHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

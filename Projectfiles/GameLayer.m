@@ -55,8 +55,8 @@ static GameLayer* sharedGameLayer;
         [self initPhysics];
         
         // Debug layer for chipmunk shapes
-        CCLayer *debugLayer = [[CPDebugLayer alloc] initWithSpace:_space options:nil];
-        [self addChild:debugLayer z:5]; // higher z than other layers
+        //CCLayer *debugLayer = [[CPDebugLayer alloc] initWithSpace:_space options:nil];
+        //[self addChild:debugLayer z:5]; // higher z than other layers
         
         // Add the Assassin Car
         AssassinCar *assassinCar = [AssassinCar node];
@@ -81,26 +81,32 @@ static GameLayer* sharedGameLayer;
     // bottom
     walls[0] = cpSegmentShapeNew(_space->staticBody, ccp(0, panelHeight),
                                  ccp(boxWidth, panelHeight), 0.0f);
+    walls[0]->e = 1.0;
+    walls[0]->u = 1.0;
     
     // top
     walls[1] = cpSegmentShapeNew(_space->staticBody, ccp(0, boxHeight),
                                  ccp(boxWidth, boxHeight), 0.0f);
+    walls[1]->e = 1.0;
+    walls[1]->u = 1.0;
     
     // left
     walls[2] = cpSegmentShapeNew(_space->staticBody, ccp(0, panelHeight),
                                  ccp(0, boxHeight), 0.0f);
+    walls[2]->e = 0;
+    walls[2]->u = 0;
     cpShapeSetLayers(walls[2], CP_LAYER_1);
     
     // right
     walls[3] = cpSegmentShapeNew(_space->staticBody, ccp(boxWidth, panelHeight),
                                  ccp(boxWidth, boxHeight), 0.0f);
+    walls[3]->e = 0;
+    walls[3]->u = 0;
     cpShapeSetLayers(walls[3], CP_LAYER_1);
     
     CCLOG(@"CP_ALL_LAYERS is %d", CP_ALL_LAYERS);
     
     for (int i = 0; i < 4; i++) {
-        walls[i]->e = 0.0f;
-        walls[i]->u = 0.0f;
         cpSpaceAddStaticShape(_space, walls[i]);
     }
     

@@ -7,7 +7,7 @@
             <key>button-active.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{71,43},{64,64}}</string>
+                <string>{{71,78},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>button.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,37},{64,64}}</string>
+                <string>{{149,72},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,6 +59,32 @@
             <key>police.png</key>
             <dict>
                 <key>frame</key>
+                <string>{{71,43},{74,31}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{74,31}}</string>
+                <key>sourceSize</key>
+                <string>{74,31}</string>
+            </dict>
+            <key>police0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{150,37},{74,31}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{74,31}}</string>
+                <key>sourceSize</key>
+                <string>{74,31}</string>
+            </dict>
+            <key>police1.png</key>
+            <dict>
+                <key>frame</key>
                 <string>{{150,2},{74,31}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
@@ -79,7 +105,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:538a1d625b1af1692c47aacae2c2a661$</string>
+            <string>$TexturePacker:SmartUpdate:0d99662eb1bc3e06d1db8621435ec783$</string>
             <key>textureFileName</key>
             <string>game-art.pvr.ccz</string>
         </dict>

@@ -11,6 +11,7 @@
 #import "chipmunk.h"
 
 @interface Enemy : CCNode {
+    CCAnimation *animation;
     CCSprite *sprite;
     cpBody *body;
 }

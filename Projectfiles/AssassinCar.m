@@ -28,6 +28,7 @@
         nextPosition = sprite.position;
     
         gunsFiring = NO;
+        swerving = NO;
         
         [self addChild:sprite z:0];
         
@@ -43,7 +44,7 @@
             ccp(halfSpriteWidth, -halfSpriteHeight),
         };
         
-        float mass = 5.0f;
+        float mass = 2.0f;
         
         body = cpBodyNew(mass,
                          cpMomentForPoly(mass, numVertices, verts, CGPointZero));
@@ -102,12 +103,39 @@
 {
     sprite.position = body->p;
     // Must invert the degree measure to match the body's angle
-    sprite.rotation = -CC_RADIANS_TO_DEGREES(cpBodyGetAngle(body));
+    if (!swerving) {
+        sprite.rotation = -CC_RADIANS_TO_DEGREES(cpBodyGetAngle(body));
+    }
+    cpFloat rotationMagnitude = abs(sprite.rotation);
+    // simulate corrective steering if past an arbitrary angle
+    if (rotationMagnitude > 10 && swerving == NO) {
+        swerving = YES;
+        [self steerCorrectively];
+        cpBodySetAngVel(body, 0);
+    }
+    
     // TODO: make this less verbose/more efficient
     leftFlashEffect.position = CGPointMake(sprite.contentSize.width,
                                            sprite.contentSize.height * .25f);
     rightFlashEffect.position = CGPointMake(sprite.contentSize.width,
                                             sprite.contentSize.height * .75f);
+}
+
+-(void) steerCorrectively
+{
+    float swerveAngle = -CC_RADIANS_TO_DEGREES(cpBodyGetAngVel(body));
+    id swerveUp = [CCRotateTo actionWithDuration:.25f angle:swerveAngle];
+    id matchBody = [CCCallBlock actionWithBlock:^{
+        cpBodySetAngle(body, -CC_DEGREES_TO_RADIANS(sprite.rotation));
+    }];
+    id swerveDown = [CCRotateTo actionWithDuration:.25f angle:-swerveAngle];
+    id center = [CCRotateTo actionWithDuration:.25f angle:0];
+    id endSwerve = [CCCallBlock actionWithBlock: ^{
+        cpBodySetAngle(body, 0);
+        swerving = NO;
+    }];					
+    id sequence = [CCSequence actions:swerveUp, matchBody, swerveDown, matchBody, center, endSwerve, nil];
+    [sprite runAction:sequence];
 }
 
 @end

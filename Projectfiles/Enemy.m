@@ -8,11 +8,13 @@
 
 #import "Enemy.h"
 #import "GameLayer.h"
+#import "CCAnimationHelper.h"
 
 @implementation Enemy
 // Just use this class for the police for now, but remember to fix class-structure later
 -(Enemy *) init {
     if (self = [super init]) {
+        
         sprite = [CCSprite spriteWithSpriteFrameName:@"police.png"];
         CGSize carSize = sprite.contentSize;
         CGSize screenSize = [CCDirector sharedDirector].winSize;
@@ -23,7 +25,11 @@
         id actionCallFunc = [CCCallFunc actionWithTarget:self
                                                 selector:@selector(initPhysics)];
         id sequence = [CCSequence actions:emerge, actionCallFunc, nil];
+        animation = [CCAnimation animationWithFrame:@"police" frameCount:2 delay:.25f];
+        CCAction *animationAction = [CCRepeatForever actionWithAction:
+                                     [CCAnimate actionWithAnimation:animation]];
         [sprite runAction:sequence];
+        [sprite runAction:animationAction];
     }
     
     return self;
