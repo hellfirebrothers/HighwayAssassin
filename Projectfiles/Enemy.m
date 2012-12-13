@@ -36,8 +36,8 @@
         
         [self addChild:sprite];
         
-        // Start with 100 hp for debugging
-        hitPoints = 100;
+        // Start with 500 hp for debugging
+        hitPoints = 500;
         
         // Animation stuff
         animation = [CCAnimation animationWithFrame:@"police" frameCount:2 delay:.25f];
@@ -49,6 +49,7 @@
         
         // Start pursuing the Assassin Car right away
         enemyState = EnemyStatePursuing;
+        
         [self scheduleUpdate];
     }
     
@@ -113,9 +114,11 @@
         [self steerCorrectively];
         cpBodySetAngVel(sprite.body, 0);
     }
+    
+    if (hitPoints <= 0) {
+        [self removeFromParentAndCleanup:YES];
+    }
 }
-
-
 
 -(void) seek:(CGPoint)position distance:(float)distance
 {
@@ -149,21 +152,11 @@
     [sprite runAction:sequence];
 }
 
--(void) dealloc
+-(void) takeDamage:(float)damage
 {
-    cpBodyFree(sprite.body);
+    hitPoints -= damage;
+    CCLOG(@"hitpoints: %d", hitPoints);
 }
 
-/*static int contactBegin(cpArbiter *arbiter, struct cpSpace *space, void *data)
-{
-    BOOL processCollision = YES;
-    
-    cpBody *bodyA;
-    cpBody *bodyB;
-    cpArbiterGetBodies(arbiter, &bodyA, &bodyB);
-    
-    PhysicsSprite *spriteA = (__bridge PhysicsSprite *)bodyA->data;
-    PhysicsSprite *spriteB = (__bridge PhysicsSprite *)bodyB->data;
-} */
 
 @end

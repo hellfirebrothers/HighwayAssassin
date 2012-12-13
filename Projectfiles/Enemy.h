@@ -33,4 +33,5 @@ typedef enum {
 }
 
 +(void) spawnEnemyOfType:(EnemyType)enemyType;
+-(void) takeDamage:(float)damage;
 @end

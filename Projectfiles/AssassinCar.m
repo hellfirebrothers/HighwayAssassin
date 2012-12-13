@@ -28,7 +28,6 @@
         CGPoint pos = ccp(carSize.width / 2, screenSize.height / 2);
         sprite.position = pos;
         nextPosition = sprite.position;
-        
         [self scheduleUpdate];
     }
     

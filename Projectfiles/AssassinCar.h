@@ -10,7 +10,6 @@
 #import "cocos2d.h"
 #import "chipmunk.h"
 @class PhysicsSprite;
-
 @class MuzzleFlashEffect;
 
 typedef enum {

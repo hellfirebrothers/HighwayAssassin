@@ -9,6 +9,7 @@
 #import "GameLayer.h"
 #import "TileMapBackground.h"
 #import "AssassinCar.h"
+#import "Enemy.h"
 #import "ControlsLayer.h"
 #import "MuzzleFlashEffect.h"
 #import "CPDebugLayer.h"
@@ -111,6 +112,8 @@ static GameLayer* sharedGameLayer;
         cpSpaceAddStaticShape(_space, walls[i]);
     }
     
+    cpSpaceAddCollisionHandler(_space, 0, 0,
+                               &contactBegin, NULL, &postSolve, &contactEnd, NULL);
 }
 
 // Checks if the touch location was in an area that this layer wants to handle as input.
@@ -137,7 +140,6 @@ static GameLayer* sharedGameLayer;
         lastTouchLocation = [touch locationInView:[touch view]];
         
         if ([self isTouchForMe:lastTouchLocation]) {
-            NSLog(@"handling touch");
             readyForTouch = NO;
             return YES;
         }
@@ -177,6 +179,42 @@ void updateBodies(cpBody *body, void *data) {
     [sprite updatePhysics];
 }
 
+static int contactBegin(cpArbiter *arbiter, struct cpSpace *space, void *data)
+{
+    BOOL processCollision = YES;
+        
+    return processCollision;
+}
+
+static void postSolve(cpArbiter *arbiter, cpSpace *space, void *data)
+{
+    if (cpArbiterIsFirstContact(arbiter)) {
+        cpBody *bodyA;
+        cpBody *bodyB;
+        cpArbiterGetBodies(arbiter, &bodyA, &bodyB);
+        
+        PhysicsSprite *spriteA = (__bridge PhysicsSprite *)bodyA->data;
+        PhysicsSprite *spriteB = (__bridge PhysicsSprite *)bodyB->data;
+        id nodeA = [spriteA parent];
+        id nodeB = [spriteB parent];
+        
+        if (spriteA != nil && spriteB != nil) {
+            float totalEnergyLost = cpArbiterTotalKE(arbiter);
+            float damage = totalEnergyLost * 0.001f;
+            if ([nodeA isKindOfClass:[Enemy class]]) {
+                [(Enemy *)nodeA takeDamage:damage];
+            } else if ([nodeB isKindOfClass:[Enemy class]]) {
+                [(Enemy *)nodeB takeDamage:damage];
+            }
+        }
+    }
+}
+
+static void contactEnd(cpArbiter *arbiter, cpSpace *space, void *data)
+{
+    
+}
+
 -(void) dealloc
 {
 	sharedGameLayer = nil;
@@ -184,6 +222,7 @@ void updateBodies(cpBody *body, void *data) {
     for (int i = 0; i < 4; i++) {
         cpShapeFree(walls[i]);
     }
+    
     cpSpaceFree(self.space);
 }
 

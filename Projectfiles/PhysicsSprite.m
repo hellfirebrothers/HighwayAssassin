@@ -34,15 +34,16 @@
                                      CGPointZero));
     
     sprite.space = [GameLayer sharedGameLayer].space;
+
     
     cpSpaceAddBody(sprite.space, sprite.body);
     
-    cpShape *shape = cpPolyShapeNew(sprite.body, numVertices, verts,
+    sprite.shape = cpPolyShapeNew(sprite.body, numVertices, verts,
                                     CGPointZero);
 
-    shape->e = 0.4f;
-    shape->u = 0.4f;
-    cpSpaceAddShape(sprite.space, shape);
+    sprite.shape->e = 0.4f;
+    sprite.shape->u = 0.4f;
+    cpSpaceAddShape(sprite.space, sprite.shape);
     
     sprite.layers = CP_ALL_LAYERS;
     
@@ -87,6 +88,13 @@ void setLayers(cpBody *body, cpShape *shape, void *data) {
 -(void) updatePhysics {
     self.position = cpBodyGetPos(self.body);
     self.rotation = -CC_RADIANS_TO_DEGREES(cpBodyGetAngle(self.body));
+}
+
+-(void) dealloc {
+    cpSpaceRemoveBody(self.space, self.body);
+    cpSpaceRemoveShape(self.space, self.shape);
+    cpBodyFree(self.body);
+    cpShapeFree(self.shape);
 }
 
 @end

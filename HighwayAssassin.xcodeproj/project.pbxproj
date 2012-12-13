@@ -14,7 +14,6 @@
 		50328386166D80D200714E52 /* MuzzleFlashEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 50328385166D80D200714E52 /* MuzzleFlashEffect.m */; };
 		508064D91674A4350039F7C3 /* CPDebugLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 508064D81674A4350039F7C3 /* CPDebugLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5086B77C167988E3009DC133 /* PhysicsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5086B77B167988E1009DC133 /* PhysicsSprite.m */; };
-		5086B77F16799B5B009DC133 /* CCPhysicsRotateTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5086B77E16799B5A009DC133 /* CCPhysicsRotateTo.m */; };
 		5088A46D166E7945002E602F /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088A46C166E78FD002E602F /* GameLayer.m */; };
 		508E115C166DBAB300E37629 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E115B166DBAB300E37629 /* bullet.png */; };
 		508E115E166DBABD00E37629 /* bullet-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 508E115D166DBABD00E37629 /* bullet-hd.png */; };
@@ -75,8 +74,6 @@
 		508064D81674A4350039F7C3 /* CPDebugLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPDebugLayer.m; path = "../../../../../Downloads/CPDebugLayer-master/CPDebugLayer.m"; sourceTree = "<group>"; };
 		5086B77A167988E0009DC133 /* PhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		5086B77B167988E1009DC133 /* PhysicsSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsSprite.m; sourceTree = "<group>"; };
-		5086B77D16799B59009DC133 /* CCPhysicsRotateTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhysicsRotateTo.h; sourceTree = "<group>"; };
-		5086B77E16799B5A009DC133 /* CCPhysicsRotateTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPhysicsRotateTo.m; sourceTree = "<group>"; };
 		5088A46B166E78FD002E602F /* GameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		5088A46C166E78FD002E602F /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		508E115B166DBAB300E37629 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
@@ -217,8 +214,6 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
-				5086B77D16799B59009DC133 /* CCPhysicsRotateTo.h */,
-				5086B77E16799B5A009DC133 /* CCPhysicsRotateTo.m */,
 				5086B77A167988E0009DC133 /* PhysicsSprite.h */,
 				5086B77B167988E1009DC133 /* PhysicsSprite.m */,
 				50A9D9FC16756FD800D7F754 /* CCAnimationHelper.h */,
@@ -391,7 +386,6 @@
 				508064D91674A4350039F7C3 /* CPDebugLayer.m in Sources */,
 				50A9D9FE16756FD800D7F754 /* CCAnimationHelper.m in Sources */,
 				5086B77C167988E3009DC133 /* PhysicsSprite.m in Sources */,
-				5086B77F16799B5B009DC133 /* CCPhysicsRotateTo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

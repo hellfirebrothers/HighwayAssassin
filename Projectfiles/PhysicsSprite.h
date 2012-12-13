@@ -14,6 +14,7 @@
 }
 
 @property cpBody *body;
+@property cpShape *shape;
 @property cpSpace *space;
 @property int layers;
 
