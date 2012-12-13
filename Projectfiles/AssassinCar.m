@@ -9,60 +9,29 @@
 #import "AssassinCar.h"
 #import "MuzzleFlashEffect.h"
 #import "GameLayer.h"
+#import "PhysicsSprite.h"
 
 
 @implementation AssassinCar
-@synthesize velocity;
+
 -(AssassinCar *) init
 {
     if (self = [super init]) {
         CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache]
                                       spriteFrameByName:@"car.png"];
-        sprite = [CCSprite spriteWithSpriteFrame:spriteFrame];
-        CGSize screenSize = [CCDirector sharedDirector].winSize;
+        sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:2.0f];
+        [self addChild:sprite];
         CGSize carSize = sprite.contentSize;
+        CGSize screenSize = [CCDirector sharedDirector].winSize;
         
         // Place it on the middle-left side of the window for now.
         CGPoint pos = ccp(carSize.width / 2, screenSize.height / 2);
         sprite.position = pos;
         nextPosition = sprite.position;
-    
-        gunsFiring = NO;
-        swerving = NO;
         
-        [self addChild:sprite z:0];
-        
-        const int numVertices = 4;
-        float  halfSpriteWidth = carSize.width / 2;
-        float halfSpriteHeight = carSize.height / 2;
-        
-        CGPoint verts[] =
-        {
-            ccp(-halfSpriteWidth, -halfSpriteHeight),
-            ccp(-halfSpriteWidth, halfSpriteHeight),
-            ccp(halfSpriteWidth, halfSpriteHeight),
-            ccp(halfSpriteWidth, -halfSpriteHeight),
-        };
-        
-        float mass = 2.0f;
-        
-        body = cpBodyNew(mass,
-                         cpMomentForPoly(mass, numVertices, verts, CGPointZero));
-        
-        cpSpace *space = [GameLayer sharedGameLayer].space;
-        body->p = pos;
-        
-        cpSpaceAddBody(space, body);
-     
-        // TODO: maybe add more shapes to increase collision precision
-        cpShape *shape = cpPolyShapeNew(body, numVertices, verts, CGPointZero);
-        shape->e = 0.4f;
-        shape->u = 0.4f;
-        cpSpaceAddShape(space, shape);
-        
-        // Store a reference to this node for use in callback functions
-        body->data = (__bridge void*)self;
+        [self scheduleUpdate];
     }
+    
     return self;
 }
 
@@ -72,11 +41,10 @@
     int impulseMultiplier = 5;
     
     CGPoint impulseVect = ccpMult(difference, impulseMultiplier);
-    cpBodyApplyImpulse(body, impulseVect, CGPointZero);
+    cpBodyApplyImpulse(sprite.body, impulseVect, CGPointZero);
 }
 
 -(void) fireMachineGun {
-    
     // Add a flash effect on each side of the front of the car to simulate
     // machine gun fire
     leftFlashEffect = [MuzzleFlashEffect node];
@@ -99,19 +67,15 @@
     rightFlashEffect = nil;
 }
 
--(void) syncSpriteWithBody
+-(void) update:(ccTime)delta
 {
-    sprite.position = body->p;
-    // Must invert the degree measure to match the body's angle
-    if (!swerving) {
-        sprite.rotation = -CC_RADIANS_TO_DEGREES(cpBodyGetAngle(body));
-    }
     cpFloat rotationMagnitude = abs(sprite.rotation);
+    
     // simulate corrective steering if past an arbitrary angle
     if (rotationMagnitude > 10 && swerving == NO) {
         swerving = YES;
         [self steerCorrectively];
-        cpBodySetAngVel(body, 0);
+        cpBodySetAngVel(sprite.body, 0);
     }
     
     // TODO: make this less verbose/more efficient
@@ -123,19 +87,30 @@
 
 -(void) steerCorrectively
 {
-    float swerveAngle = -CC_RADIANS_TO_DEGREES(cpBodyGetAngVel(body));
+    float swerveAngle = -CC_RADIANS_TO_DEGREES(cpBodyGetAngVel(sprite.body)) * .5f;
     id swerveUp = [CCRotateTo actionWithDuration:.25f angle:swerveAngle];
-    id matchBody = [CCCallBlock actionWithBlock:^{
-        cpBodySetAngle(body, -CC_DEGREES_TO_RADIANS(sprite.rotation));
-    }];
     id swerveDown = [CCRotateTo actionWithDuration:.25f angle:-swerveAngle];
     id center = [CCRotateTo actionWithDuration:.25f angle:0];
     id endSwerve = [CCCallBlock actionWithBlock: ^{
-        cpBodySetAngle(body, 0);
+        sprite.rotation = 0;
         swerving = NO;
-    }];					
-    id sequence = [CCSequence actions:swerveUp, matchBody, swerveDown, matchBody, center, endSwerve, nil];
+    }];
+    
+    id sequence = [CCSequence actions:swerveUp, swerveDown, center, endSwerve, nil];
     [sprite runAction:sequence];
 }
+
+-(CGPoint) position {
+    return sprite.position;
+}
+
+-(CGPoint) velocity {
+    return sprite.body->v;
+}
+
+-(void) dealloc {
+    cpBodyFree(sprite.body);
+}
+
 
 @end

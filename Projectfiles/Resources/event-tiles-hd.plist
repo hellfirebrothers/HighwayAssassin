@@ -17,6 +17,19 @@
                 <key>sourceSize</key>
                 <string>{64,64}</string>
             </dict>
+            <key>enemy-tile.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,64},{64,64}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{64,64}}</string>
+                <key>sourceSize</key>
+                <string>{64,64}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -25,9 +38,9 @@
             <key>realTextureFileName</key>
             <string>event-tiles-hd.png</string>
             <key>size</key>
-            <string>{64,64}</string>
+            <string>{64,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:885c48dd462178ab6d953689b61d2d09$</string>
+            <string>$TexturePacker:SmartUpdate:0461da21eb2771e76d56c90eabc72817$</string>
             <key>textureFileName</key>
             <string>event-tiles-hd.png</string>
         </dict>

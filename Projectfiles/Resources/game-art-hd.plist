@@ -7,7 +7,7 @@
             <key>button-active.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{268,132},{128,128}}</string>
+                <string>{{136,144},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>button.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{136,80},{128,128}}</string>
+                <string>{{287,132},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -42,6 +42,19 @@
                 <string>{{0,0},{150,74}}</string>
                 <key>sourceSize</key>
                 <string>{150,74}</string>
+            </dict>
+            <key>enemy.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{136,80},{147,60}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{147,60}}</string>
+                <key>sourceSize</key>
+                <string>{147,60}</string>
             </dict>
             <key>panel.png</key>
             <dict>
@@ -105,7 +118,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:060518e493794d09aa0bfd6585c5329f$</string>
+            <string>$TexturePacker:SmartUpdate:f28158eeb682cc4f78b2179708372f34$</string>
             <key>textureFileName</key>
             <string>game-art-hd.pvr.ccz</string>
         </dict>

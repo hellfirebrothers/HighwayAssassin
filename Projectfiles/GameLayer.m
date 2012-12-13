@@ -12,6 +12,7 @@
 #import "ControlsLayer.h"
 #import "MuzzleFlashEffect.h"
 #import "CPDebugLayer.h"
+#import "PhysicsSprite.h"
 
 @interface GameLayer (PrivateMethods)
 @end
@@ -172,8 +173,8 @@ static GameLayer* sharedGameLayer;
 }
 
 void updateBodies(cpBody *body, void *data) {
-    AssassinCar *car = (__bridge AssassinCar *)body->data;
-    [car syncSpriteWithBody];
+    PhysicsSprite *sprite = (__bridge PhysicsSprite *)body->data;
+    [sprite updatePhysics];
 }
 
 -(void) dealloc

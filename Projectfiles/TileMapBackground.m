@@ -47,19 +47,24 @@
 -(void) checkTile
 {
     currentTileColumn++;
-    int currentGID = [eventLayer tileGIDAt:ccp(currentTileColumn, 4)];
-    if (currentGID)
-    {
-        [self handleEventTile:currentGID];
+    for (int i = 0; i < 8; i++) {
+        int currentGID = [eventLayer tileGIDAt:ccp(currentTileColumn, i)];
+        if (currentGID)
+        {
+            [self handleEventTile:currentGID];
+        }
     }
 }
 
 -(void) handleEventTile:(int)GID
 {
     NSDictionary *properties = [tileMap propertiesForGID:GID];
-    NSNumber *value = [properties valueForKey:@"policeSpawn"];
+    NSNumber *value = [properties valueForKey:@"enemyType"];
+    if (value.intValue == 0) {
+        [Enemy spawnEnemyOfType:EnemyTypeGeneric];
+    }
     if (value.intValue == 1) {
-        [Enemy spawnEnemy];
+        [Enemy spawnEnemyOfType:EnemyTypePolice];
     }
 }
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "chipmunk.h"
+@class PhysicsSprite;
 
 @class MuzzleFlashEffect;
 
@@ -18,19 +19,19 @@ typedef enum {
 } AssassinCarNodeTags;
 
 @interface AssassinCar : CCNode {
-    CCSprite *sprite;
+    PhysicsSprite *sprite;
     CGPoint nextPosition;
     bool gunsFiring;
     MuzzleFlashEffect *leftFlashEffect;
     MuzzleFlashEffect *rightFlashEffect;
-    cpBody *body;
     bool swerving;
 }
 
-@property CGPoint velocity;
+@property(nonatomic) CGPoint velocity;
+@property(nonatomic) CGPoint position;
+
 -(void) addToLocation:(CGPoint)difference;
 -(void) fireMachineGun;
 -(void) stopMachineGun;
 -(void) steerCorrectively;
--(void) syncSpriteWithBody;
 @end

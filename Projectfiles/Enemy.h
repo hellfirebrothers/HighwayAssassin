@@ -9,12 +9,28 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "chipmunk.h"
+@class GameLayer;
+@class PhysicsSprite;
+
+typedef enum {
+    EnemyStatePursuing,
+    EnemyStateAttacking,
+    EnemyStateSwerving,
+    EnemyStateMax
+} EnemyState;
+
+typedef enum {
+    EnemyTypePolice,
+    EnemyTypeGeneric,
+} EnemyType;
 
 @interface Enemy : CCNode {
     CCAnimation *animation;
-    CCSprite *sprite;
-    cpBody *body;
+    PhysicsSprite *sprite;
+    EnemyState enemyState;
+    GameLayer *gameLayer;
+    int hitPoints;
 }
 
-+(void) spawnEnemy;
++(void) spawnEnemyOfType:(EnemyType)enemyType;
 @end
