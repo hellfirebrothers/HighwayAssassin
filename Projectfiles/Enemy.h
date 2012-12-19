@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "chipmunk.h"
+#import "CPGameObject.h"
+
 @class GameLayer;
 @class PhysicsSprite;
 
@@ -24,7 +26,7 @@ typedef enum {
     EnemyTypeGeneric,
 } EnemyType;
 
-@interface Enemy : CCNode {
+@interface Enemy : CPGameObject  {
     CCAnimation *animation;
     PhysicsSprite *sprite;
     EnemyState enemyState;

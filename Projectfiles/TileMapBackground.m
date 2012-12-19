@@ -9,7 +9,7 @@
 #import "TileMapBackground.h"
 #import "GameLayer.h"
 #import "Enemy.h"
-
+#define ENEMIES 1
 
 @implementation TileMapBackground
 
@@ -46,12 +46,14 @@
 
 -(void) checkTile
 {
-    currentTileColumn++;
-    for (int i = 0; i < 8; i++) {
-        int currentGID = [eventLayer tileGIDAt:ccp(currentTileColumn, i)];
-        if (currentGID)
-        {
-            [self handleEventTile:currentGID];
+    if (ENEMIES) {
+        currentTileColumn++;
+        for (int i = 0; i < 8; i++) {
+            int currentGID = [eventLayer tileGIDAt:ccp(currentTileColumn, i)];
+            if (currentGID)
+            {
+                [self handleEventTile:currentGID];
+            }
         }
     }
 }

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "chipmunk.h"
-#import "CPGameObject.h"
 
 @class PhysicsSprite;
 @class MuzzleFlashEffect;
@@ -19,7 +18,7 @@ typedef enum {
     AssassinCarNodeRightFlashEffect,
 } AssassinCarNodeTags;
 
-@interface AssassinCar : CPGameObject {
+@interface AssassinCar : CCNode {
     PhysicsSprite *sprite;
     CGPoint nextPosition;
     bool gunsFiring;

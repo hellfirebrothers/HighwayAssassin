@@ -18,9 +18,9 @@
 @property cpSpace *space;
 @property int layers;
 
-+(id) spriteWithSpriteFrame:(CCSpriteFrame *)spriteFrame mass:(float)mass;
++(id) spriteWithSpriteFrame:(CCSpriteFrame *)spriteFrame mass:(float)mass isSensor:(bool)isSensor;
 +(id) spriteWithSpriteFrame:(CCSpriteFrame *)spriteFrame mass:(float)mass
-                     layers:(int)layers;
+                     layers:(int)layers isSensor:(bool)isSensor;
 -(void) updatePhysics;
 void setLayers(cpBody *body, cpShape *shape, void *data);
 @end

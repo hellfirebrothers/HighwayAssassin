@@ -275,7 +275,7 @@ static void drawBBs(cpSpace *space, NSDictionary *options) {
 static void drawCollisionPoints(cpSpace *space, NSDictionary *options) {
     // draw each collision point
     ccArray *arbiters = (ccArray *)space->CP_PRIVATE(arbiters);
-    for (int i = 0; i < arbiters->num; i++){
+    for (int i = 0; i < (int)arbiters->num; i++){
         cpArbiter *arb = (cpArbiter *)arbiters->arr[i];
         cpContactPointSet contactPointSet = cpArbiterGetContactPointSet(arb);
         

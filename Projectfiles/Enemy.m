@@ -14,7 +14,6 @@
 
 @implementation Enemy
 -(Enemy *) init {
-    
     return [self initEnemyOfType:EnemyTypeGeneric];
 }
 
@@ -26,8 +25,9 @@
 {
     self = [super init];
     if (enemyType == EnemyTypePolice) {
+        self.type = GameObjectEnemy;
         CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"police.png"];
-        sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:2.0f layers:CP_LAYER_2];
+        sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:2.0f layers:CP_LAYER_2 isSensor:NO];
         
         CGSize carSize = sprite.contentSize;
         CGSize screenSize = [CCDirector sharedDirector].winSize;
@@ -55,7 +55,7 @@
     
     if (enemyType == EnemyTypeGeneric) {
         /*CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"enemy.png"];
-        sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:1.0f layers:CP_LAYER_2];
+        sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:1.0f layers:CP_LAYER_2 isSensor:NO];
         CGSize carSize = sprite.contentSize;
         CGSize screenSize = [CCDirector sharedDirector].winSize;
         CGPoint pos = ccp(carSize.width * 3, screenSize.height / 2);
@@ -155,8 +155,22 @@
 -(void) takeDamage:(float)damage
 {
     hitPoints -= damage;
-    CCLOG(@"hitpoints: %d", hitPoints);
 }
 
+-(void)handleCollisionWithEnemy:(PhysicsSprite *)enemy energyLost:(float)energyLost
+{
+    
+}
+
+-(void)handleCollisionWithPlayer:(PhysicsSprite *)player energyLost:(float)energyLost
+{
+    float damageMultiplier = .001f;
+    [self takeDamage:energyLost*damageMultiplier];
+}
+
+-(void)handleCollisionWithProjectile:(PhysicsSprite *)projectile
+{
+    CCLOG(@"STOP SHOOTING BITCH");
+}
 
 @end

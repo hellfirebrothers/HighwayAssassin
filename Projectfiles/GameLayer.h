@@ -32,6 +32,8 @@ typedef enum
     CP_LAYER_8 = 0x0000000f,
 } PhysicsLayers;
 
+
+
 @interface GameLayer : CCLayer 
 {
     CGPoint lastTouchLocation;

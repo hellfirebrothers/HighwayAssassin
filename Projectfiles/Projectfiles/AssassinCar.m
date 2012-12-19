@@ -17,10 +17,9 @@
 -(AssassinCar *) init
 {
     if (self = [super init]) {
-        self.type = GameObjectPlayer;
         CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache]
                                       spriteFrameByName:@"car.png"];
-        sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:2.0f isSensor:NO];
+        sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:2.0f];
         [self addChild:sprite];
         CGSize carSize = sprite.contentSize;
         CGSize screenSize = [CCDirector sharedDirector].winSize;
@@ -124,17 +123,5 @@
     cpBodyFree(sprite.body);
 }
 
--(void)handleCollisionWithEnemy:(PhysicsSprite *)enemy energyLost:(float)energyLost
-{
-}
 
--(void)handleCollisionWithPlayer:(PhysicsSprite *)player energyLost:(float)energyLost
-{
-    
-}
-
--(void)handleCollisionWithProjectile:(PhysicsSprite *)projectile
-{
-    
-}
 @end

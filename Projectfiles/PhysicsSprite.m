@@ -11,7 +11,7 @@
 
 
 @implementation PhysicsSprite
-+(id) spriteWithSpriteFrame:(CCSpriteFrame *)spriteFrame mass:(float)mass
++(id) spriteWithSpriteFrame:(CCSpriteFrame *)spriteFrame mass:(float)mass isSensor:(bool)isSensor
 {
     PhysicsSprite *sprite = [super spriteWithSpriteFrame:spriteFrame];
     
@@ -33,29 +33,35 @@
                      cpMomentForPoly(mass, numVertices, verts,
                                      CGPointZero));
     
-    sprite.space = [GameLayer sharedGameLayer].space;
 
-    
-    cpSpaceAddBody(sprite.space, sprite.body);
     
     sprite.shape = cpPolyShapeNew(sprite.body, numVertices, verts,
                                     CGPointZero);
 
     sprite.shape->e = 0.4f;
     sprite.shape->u = 0.4f;
-    cpSpaceAddShape(sprite.space, sprite.shape);
     
     sprite.layers = CP_ALL_LAYERS;
     
     sprite.body->data = (__bridge void *)sprite;
-        
+    
+    if (isSensor) {
+        // Sensor shapes call collision call backs, but they aren't simulated
+        // (so we don't add them to the space)
+        sprite.shape->sensor = YES;
+    }
+    // If it's not a sensor shape, we want to simulate collisions
+    sprite.space = [GameLayer sharedGameLayer].space;
+    cpSpaceAddBody(sprite.space, sprite.body);
+    cpSpaceAddShape(sprite.space, sprite.shape);
+    
     return sprite;
 }
 
 +(id) spriteWithSpriteFrame:(CCSpriteFrame *)spriteFrame mass:(float)mass
-                      layers:(int)layers
+                      layers:(int)layers isSensor:(bool)isSensor
 {
-    PhysicsSprite *sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:mass];
+    PhysicsSprite *sprite = [PhysicsSprite spriteWithSpriteFrame:spriteFrame mass:mass isSensor:isSensor];
     sprite.layers = layers;
     cpBodyEachShape(sprite.body, setLayers, sprite.body->data);
     return sprite;

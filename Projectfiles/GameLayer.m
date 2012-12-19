@@ -14,6 +14,8 @@
 #import "MuzzleFlashEffect.h"
 #import "CPDebugLayer.h"
 #import "PhysicsSprite.h"
+#import "Bullet.h"
+#import "CPCollisionHandler.h"
 
 @interface GameLayer (PrivateMethods)
 @end
@@ -106,14 +108,12 @@ static GameLayer* sharedGameLayer;
     walls[3]->u = 0;
     cpShapeSetLayers(walls[3], CP_LAYER_1);
     
-    CCLOG(@"CP_ALL_LAYERS is %d", CP_ALL_LAYERS);
-    
     for (int i = 0; i < 4; i++) {
         cpSpaceAddStaticShape(_space, walls[i]);
     }
     
-    cpSpaceAddCollisionHandler(_space, 0, 0,
-                               &contactBegin, NULL, &postSolve, &contactEnd, NULL);
+    CPCollisionHandler *collisionHandler = [CPCollisionHandler CollisionHandlerWithSpace:_space];
+    [self addChild:collisionHandler];
 }
 
 // Checks if the touch location was in an area that this layer wants to handle as input.
@@ -179,41 +179,6 @@ void updateBodies(cpBody *body, void *data) {
     [sprite updatePhysics];
 }
 
-static int contactBegin(cpArbiter *arbiter, struct cpSpace *space, void *data)
-{
-    BOOL processCollision = YES;
-        
-    return processCollision;
-}
-
-static void postSolve(cpArbiter *arbiter, cpSpace *space, void *data)
-{
-    if (cpArbiterIsFirstContact(arbiter)) {
-        cpBody *bodyA;
-        cpBody *bodyB;
-        cpArbiterGetBodies(arbiter, &bodyA, &bodyB);
-        
-        PhysicsSprite *spriteA = (__bridge PhysicsSprite *)bodyA->data;
-        PhysicsSprite *spriteB = (__bridge PhysicsSprite *)bodyB->data;
-        id nodeA = [spriteA parent];
-        id nodeB = [spriteB parent];
-        
-        if (spriteA != nil && spriteB != nil) {
-            float totalEnergyLost = cpArbiterTotalKE(arbiter);
-            float damage = totalEnergyLost * 0.001f;
-            if ([nodeA isKindOfClass:[Enemy class]]) {
-                [(Enemy *)nodeA takeDamage:damage];
-            } else if ([nodeB isKindOfClass:[Enemy class]]) {
-                [(Enemy *)nodeB takeDamage:damage];
-            }
-        }
-    }
-}
-
-static void contactEnd(cpArbiter *arbiter, cpSpace *space, void *data)
-{
-    
-}
 
 -(void) dealloc
 {
