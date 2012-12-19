@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "chipmunk.h"
 #import "CPGameObject.h"
+@class BulletCache;
 
 @class PhysicsSprite;
 @class MuzzleFlashEffect;
@@ -34,5 +35,6 @@ typedef enum {
 -(void) addToLocation:(CGPoint)difference;
 -(void) fireMachineGun;
 -(void) stopMachineGun;
+-(void) fireBullets;
 -(void) steerCorrectively;
 @end

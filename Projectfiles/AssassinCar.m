@@ -29,6 +29,7 @@
         CGPoint pos = ccp(carSize.width / 2, screenSize.height / 2);
         sprite.position = pos;
         nextPosition = sprite.position;
+    
         [self scheduleUpdate];
     }
     
@@ -52,7 +53,6 @@
                                            sprite.position.y + sprite.contentSize.height / 4);
     leftFlashEffect.position = leftFirePosition;
     [sprite addChild:leftFlashEffect z:0];
-    [self startFiringBulletsFromPosition:leftFirePosition];
     
     rightFlashEffect = [MuzzleFlashEffect node];
     CGPoint rightFirePosition = CGPointMake(sprite.position.x + sprite.contentSize.width * .5f,
@@ -60,17 +60,21 @@
     
     rightFlashEffect.position = rightFirePosition;
     [sprite addChild:rightFlashEffect z:0];
-    [self startFiringBulletsFromPosition:rightFirePosition];
+    [self schedule:@selector(fireBullets) interval:.05f];
 }
 
--(void) startFiringBulletsFromPosition:(CGPoint)position
+-(void) fireBullets
 {
-    Bullet *bullet = [Bullet node];
-    [self addChild:bullet z:5];
-    [bullet fireFromPosition:position withRotation:sprite.rotation];
+    Bullet *leftBullet = [Bullet node];
+    Bullet *rightBullet = [Bullet node];
+    [sprite addChild:leftBullet];
+    [sprite addChild:rightBullet];
+    [leftBullet fireFromPosition:leftFlashEffect.position withRotation:leftFlashEffect.rotation];
+    [rightBullet fireFromPosition:rightFlashEffect.position withRotation:leftFlashEffect.rotation];
 }
 
 -(void) stopMachineGun {
+    [self unschedule:@selector(fireBullets)];
     [leftFlashEffect removeFromParentAndCleanup:YES];
     [rightFlashEffect removeFromParentAndCleanup:YES];
     

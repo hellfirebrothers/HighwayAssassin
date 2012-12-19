@@ -13,11 +13,10 @@
 {
     self.type = GameObjectProjectile;
     if (self = [super init]) {
-        CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache]
-                                spriteFrameByName:@"bullet.png"];
-        sprite = [PhysicsSprite spriteWithSpriteFrame:frame mass:0.1f isSensor:YES];
-        sprite.visible = NO;
-        [self addChild:sprite];
+        CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"bullet.png"];
+        _sprite = [PhysicsSprite spriteWithSpriteFrame:frame mass:0.1f isSensor:YES];
+        _sprite.visible = NO;
+        [self addChild:_sprite];
     }
     
     [self scheduleUpdate];
@@ -25,29 +24,35 @@
 }
 
 -(void) fireFromPosition:(CGPoint)position withRotation:(float)rotation {
-    sprite.position = position;
-    sprite.visible = YES;
-    
-    float spriteWidth = sprite.contentSize.width;
+    self.sprite.position = position;
+    self.sprite.visible = YES;
+    streak.visible = YES;
+    float spriteWidth = self.sprite.contentSize.width;
     ccColor3B streakColor = ccc3(251, 193, 46);
-    streak = [CCMotionStreak streakWithFade:.075f minSeg:1 width:spriteWidth/10
+    streak = [CCMotionStreak streakWithFade:.04f minSeg:1 width:spriteWidth/10
                                       color:streakColor textureFilename:@"bulletstreak.png"];
-    CGPoint streakPosition = ccp(position.x - spriteWidth / 12, position.y);
+    CGPoint streakPosition = ccp(position.x - spriteWidth, position.y);
     streak.position = streakPosition;
     [self addChild:streak];
 }
 
 -(void) goAway {
-    [sprite removeAllChildrenWithCleanup:YES];
+    [self.sprite removeAllChildrenWithCleanup:YES];
 }
 
 -(void) update:(ccTime)delta {
-    float spriteWidth = sprite.contentSize.width;
-    CGPoint spritePos = sprite.position;
+    float spriteWidth = self.sprite.contentSize.width;
+    CGPoint spritePos = self.sprite.position;
+    CGSize windowSize = [CCDirector sharedDirector].winSize;
     spritePos.x += 1500 * delta;
     CGPoint streakPos = ccp(spritePos.x - spriteWidth / 12, spritePos.y);
-    sprite.position = spritePos;
+    self.sprite.position = spritePos;
     streak.position = streakPos;
+    
+    if (self.sprite.position.x > windowSize.width) {
+        [self removeFromParentAndCleanup:YES];
+    }
+    
 }
 
 -(void)handleCollisionWithEnemy:(PhysicsSprite *)enemy energyLost:(float)energyLost

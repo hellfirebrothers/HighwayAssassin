@@ -10,11 +10,12 @@
 #import "CPGameObject.h"
 
 @interface Bullet : CPGameObject  {
-    PhysicsSprite *sprite;
     CCMotionStreak *streak;
 }
 
 -(void) fireFromPosition:(CGPoint)position withRotation:(float)rotation;
 -(void) goAway;
+
+@property PhysicsSprite *sprite;
 
 @end
